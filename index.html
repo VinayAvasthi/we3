@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3 Property Registry</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ✅ Use ethers.js v6 UMD build -->
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js"></script>
+
+    <!-- Your dApp logic -->
+    <script src="app.js" defer></script>
+    
+</head>
+<body>
+    <header>
+        <h1>Web3 Property Registry</h1>
+        <p>A decentralized, immutable ledger for property ownership.</p>
+        <button id="connectWalletBtn">Connect Wallet</button>
+        <p id="accountStatus"></p>
+    </header>
+
+    <main>
+        <div class="card">
+    <h2>Register a Property</h2>
+    <form id="registerForm">
+        <input type="text" id="regPropertyId" placeholder="Property ID" required>
+        <p>Owner will be your connected wallet address.</p>
+        <button type="submit">Register Property</button>
+    </form>
+    <p id="registerStatus"></p> <!-- ✅ Feedback placeholder -->
+</div>
+
+<div class="card">
+    <h2>Transfer Ownership</h2>
+    <form id="transferForm">
+        <input type="text" id="transferPropertyId" placeholder="Property ID" required>
+        <input type="text" id="transferNewOwner" placeholder="New Owner's Wallet Address" required>
+        <button type="submit">Transfer Ownership</button>
+    </form>
+    <p id="transferStatus"></p> <!-- ✅ Feedback placeholder -->
+</div>
+
+  
+        <div class="card">
+            <h2>Get Property Details</h2>
+            <form id="detailsForm">
+                <input type="text" id="detailsPropertyId" placeholder="Property ID" required>
+                <button type="submit">Get Details</button>
+            </form>
+            <div id="propertyDetails">
+                <p>Owner: <span id="ownerAddress"></span></p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
